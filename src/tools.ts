@@ -164,7 +164,7 @@ export const tools: ToolDefinition[] = [
   ),
   define(
     "url_decode",
-    "Decode a percent-encoded URL component and reject malformed escapes or UTF-8.",
+    "Decode a percent-encoded URL component, leave '+' unchanged, and reject malformed escapes or UTF-8.",
     "url-codec",
     { text: nonblank() },
     ({ text }) => ({
@@ -229,9 +229,17 @@ export const tools: ToolDefinition[] = [
     "Calculate a percentage, share, change, adjustment or discount using decimal strings and exact integer arithmetic.",
     "percentage",
     {
-      mode: z.enum(["percent", "share", "change", "adjust", "discount"]),
-      first: decimal(),
-      second: decimal(),
+      mode: z
+        .enum(["percent", "share", "change", "adjust", "discount"])
+        .describe(
+          "percent: first × second%; share: first/second × 100%; change: old first to new second; adjust: first adjusted by second%; discount: first price with second% off.",
+        ),
+      first: decimal().describe(
+        "Base amount (percent/adjust), part (share), original value (change), or original price (discount). Decimal string: up to 15 integer digits and 6 decimal places.",
+      ),
+      second: decimal().describe(
+        "Percentage (percent/adjust/discount), positive total (share), or new value (change). Decimal string: up to 15 integer digits and 6 decimal places.",
+      ),
     },
     ({ mode, first, second }) => ({
       ...calculate(mode, first, second),

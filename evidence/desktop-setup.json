@@ -1,0 +1,15 @@
+{
+  "preparedAt": "2026-10-09T04:42:14.091Z",
+  "source": "https://claude.com/download",
+  "bundleIdentifier": "com.anthropic.claudefordesktop",
+  "signatureVerified": true,
+  "notarized": true,
+  "installation": "User Applications directory",
+  "serverName": "toolrobin",
+  "existingServersPreserved": 0,
+  "originalConfigBackup": true,
+  "login": "pending user",
+  "actualAssistantInvocations": "pending",
+  "version": "2.31226.0",
+  "nativeUiAttachment": "not yet available"
+}

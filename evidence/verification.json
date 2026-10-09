@@ -1,5 +1,5 @@
 {
-  "verifiedAt": "2026-10-09T04:28:09.353Z",
+  "verifiedAt": "2026-10-09T04:48:04.633Z",
   "node": "v24.18.0",
   "build": "passed",
   "typeCheck": "passed (source, tests, scripts)",
@@ -16,7 +16,7 @@
   "package": {
     "cleanInstall": "passed",
     "offlineNpx": "passed",
-    "sha256": "d8f72386c4a3d3af559d75a3a3c7b7ae6646e63f3c7ce02cefc270339274907e"
+    "sha256": "7c3a600058100e4057330c5be4f3903e7d79a91af75334f845d98f6bda752c04"
   },
   "configurationLaunchCommands": [
     {
@@ -50,8 +50,9 @@
     "scope": "Temporary isolated Claude Code profile; existing user configuration untouched."
   },
   "claudeDesktop": {
-    "status": "not verified",
-    "reason": "Application is not installed on this Mac; no logged-in assistant session was available."
+    "status": "installed and configured; actual assistant calls pending",
+    "version": "2.31226.0",
+    "reason": "User will sign in to the official desktop client. Native UI control could not attach during first launch; no login or tool-call success is claimed."
   },
   "cursor": {
     "status": "not verified in application",
@@ -68,5 +69,15 @@
   },
   "definitionOfDone": {
     "status": "development and protocol/package checks complete; actual Claude Desktop assistant calls still pending"
+  },
+  "publicRepository": {
+    "url": "https://github.com/wattwise-lab/toolrobin-mcp",
+    "cleanClone": {
+      "testedRevision": "44f11dfa90337c006e6d2a7da31e84abae92a621",
+      "build": "passed",
+      "tests": 66,
+      "failed": 0
+    },
+    "note": "Subsequent change clarifies parameter descriptions only; latest local stdio/package checks passed again."
   }
 }
