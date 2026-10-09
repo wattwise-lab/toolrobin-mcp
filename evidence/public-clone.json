@@ -1,0 +1,11 @@
+{
+  "verifiedAt": "2026-10-09T05:52:33.493Z",
+  "testedRevision": "b943e097a60367016572a55a72423cd9475bb0f2",
+  "source": "Fresh HTTPS clone of public repository into unrelated temporary directory; private website checkout not used.",
+  "cleanInstall": "passed",
+  "typeCheck": "passed",
+  "build": "passed",
+  "tests": 67,
+  "passed": 67,
+  "failed": 0
+}

@@ -86,12 +86,17 @@
   "publicRepository": {
     "url": "https://github.com/wattwise-lab/toolrobin-mcp",
     "cleanClone": {
-      "testedRevision": "44f11dfa90337c006e6d2a7da31e84abae92a621",
+      "verifiedAt": "2026-10-09T05:52:33.493Z",
+      "testedRevision": "b943e097a60367016572a55a72423cd9475bb0f2",
+      "source": "Fresh HTTPS clone of public repository into unrelated temporary directory; private website checkout not used.",
+      "cleanInstall": "passed",
+      "typeCheck": "passed",
       "build": "passed",
-      "tests": 66,
+      "tests": 67,
+      "passed": 67,
       "failed": 0
     },
-    "note": "This review adds BOM round-trip preservation, clearer AI parameter descriptions, real Codex/Cursor host evidence and a development dependency security update. A fresh clone will be checked after publication."
+    "note": "The tested revision contains the final source and host-check implementations. The subsequent commit records this clean-clone result only."
   },
   "minimumRuntime": {
     "node": "v22.12.0",
