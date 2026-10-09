@@ -1,0 +1,11 @@
+
+> @toolrobin/mcp-files-pilot@0.1.0 precheck
+> npm run build
+
+
+> @toolrobin/mcp-files-pilot@0.1.0 build
+> tsc -p tsconfig.json
+
+
+> @toolrobin/mcp-files-pilot@0.1.0 check
+> tsc -p tsconfig.check.json

@@ -1,0 +1,71 @@
+{
+  "verifiedAt": "2026-10-09T10:21:02.763954+00:00",
+  "scope": "Opt-in PDF pilot only; Phase 1 operation implementations unchanged",
+  "tests": {
+    "node24": {
+      "version": "24.18.0",
+      "passed": 10,
+      "failed": 0,
+      "evidence": "tests.txt"
+    },
+    "node22": {
+      "version": "22.12.0",
+      "passed": 10,
+      "failed": 0,
+      "evidence": "node22-tests.txt"
+    }
+  },
+  "typeCheck": "passed",
+  "actualTimeoutMilliseconds": 30000,
+  "networkApisDeniedInParentAndWorker": true,
+  "actualAssistant": {
+    "verifiedAt": "2026-10-09T10:02:28.469Z",
+    "clientVersion": "codex-cli 0.162.0-alpha.2",
+    "actualAssistantCalls": 4,
+    "normalResultChecks": 2,
+    "traversalRejected": true,
+    "recovery": true,
+    "naturalRequest": true,
+    "otherActions": 0,
+    "rawEventsStored": false,
+    "status": "passed",
+    "exitCode": 0,
+    "stderrBytes": 710
+  },
+  "audit": {
+    "knownVulnerabilities": 0,
+    "evidence": "audit.json",
+    "notASecurityGuarantee": true
+  },
+  "limits": {
+    "fileBytes": 20971520,
+    "pages": 100,
+    "resultBytes": 1048576,
+    "concurrency": 1,
+    "readGrant": "Explicit existing absolute directory; relative regular PDF paths; links and traversal rejected"
+  },
+  "sourceHashes": {
+    "README.md": "c54efc21b45806b0e7e9adadc4783f6c81f0454bd58e3ce9f03a278d8df4a118",
+    "THIRD_PARTY_NOTICES.txt": "7ecb0e092e6a5def707ff8d0372775758348d1936794cca3cbb36c4dbf9f7751",
+    "package-lock.json": "12ad250349231765d28bff2e0e5f5749085d056a42b45a989ec18c5bb557c52b",
+    "package.json": "dd968e5669818da8470f9cd598bea2e1eca8ed7fd9db73d4b7908ae9331bc9d3",
+    "src/extract.ts": "598cdb7f9d06fb6e30942b806f24f91d1f62b479353a9512afc6c66a9ee1e2b0",
+    "src/files.ts": "b92be275d5d0cd24b44a10bb46c5b84be053ba2d4086705e23b02574acda39b3",
+    "src/index.ts": "e97c05daa4e96609bf1263de1eafd12d5172a972b908071aa1d4b795e4d07162",
+    "src/pdf-worker.ts": "b39982511415d718abc5d8aa6ae3ac560f06c512561b51a3ea31b741bd6e2caa",
+    "src/server.ts": "46e3018432f8779ecf5caac963d0be42d3c92191d35f363a1a952c194a90cc7d",
+    "tests/host-check.mjs": "6511507dd3b6487c92a3a14a1b88d1529acb2f6155ec4cf2fee353ef44466bd2",
+    "tests/pdf.test.ts": "436a8dff683a54ac6e5f5eabf846a2543ce4a4a7e76ed849ab41370e1755f556",
+    "tsconfig.check.json": "fcb440046bb57d42a2c1976aece808221a85a485ca3b43885926f123509250db",
+    "tsconfig.json": "cacae09bc0104fc749da6e904ca712527f122816c0035bab115da510cf349a0b"
+  },
+  "unverified": [
+    "Claude Desktop signed-in assistant invocation",
+    "Native Cursor and ChatGPT desktop GUI invocation",
+    "PDF pilot physical-device/parser compatibility beyond test fixtures",
+    "OS-level sandboxing or a hard WASM/native-memory limit"
+  ],
+  "npmPublished": false,
+  "clientReadGrantsChanged": false,
+  "websiteDependency": false
+}

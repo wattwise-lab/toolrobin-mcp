@@ -1,0 +1,60 @@
+TAP version 13
+# Subtest: read root must be existing absolute directory
+ok 1 - read root must be existing absolute directory
+  ---
+  duration_ms: 43.356708
+  ...
+# Subtest: reads a regular PDF including nested spaces without altering it
+ok 2 - reads a regular PDF including nested spaces without altering it
+  ---
+  duration_ms: 3.670875
+  ...
+# Subtest: rejects traversal, absolute paths, wrong extensions and control characters
+ok 3 - rejects traversal, absolute paths, wrong extensions and control characters
+  ---
+  duration_ms: 0.790167
+  ...
+# Subtest: rejects final and ancestor symlinks before decoding
+ok 4 - rejects final and ancestor symlinks before decoding
+  ---
+  duration_ms: 0.768125
+  ...
+# Subtest: rejects missing, non-PDF and oversize files without leaking absolute paths
+ok 5 - rejects missing, non-PDF and oversize files without leaking absolute paths
+  ---
+  duration_ms: 2.8865
+  ...
+# Subtest: same website engine extracts real text and numbered pages in both profiles
+ok 6 - same website engine extracts real text and numbered pages in both profiles
+  ---
+  duration_ms: 283.042583
+  ...
+# Subtest: corrupt, scanned and 101-page PDFs are refused; a later valid PDF succeeds
+ok 7 - corrupt, scanned and 101-page PDFs are refused; a later valid PDF succeeds
+  ---
+  duration_ms: 405.371625
+  ...
+# Subtest: request cancellation terminates the worker and permits retry
+ok 8 - request cancellation terminates the worker and permits retry
+  ---
+  duration_ms: 133.862042
+  ...
+# Subtest: actual 30-second deadline terminates a stuck worker and permits retry
+ok 9 - actual 30-second deadline terminates a stuck worker and permits retry
+  ---
+  duration_ms: 30149.947958
+  ...
+# Subtest: stdio: one tool, readable result, malformed arguments and recovery with network APIs denied
+ok 10 - stdio: one tool, readable result, malformed arguments and recovery with network APIs denied
+  ---
+  duration_ms: 685.964291
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 32285.563916

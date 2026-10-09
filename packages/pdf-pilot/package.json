@@ -1,0 +1,28 @@
+{
+  "name": "@toolrobin/mcp-files-pilot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Opt-in local PDF-to-Markdown MCP pilot with an explicit read directory.",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.check.json",
+    "test": "npm run build && tsx --test tests/*.test.ts",
+    "precheck": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "@firecrawl/pdf-inspector-wasm": "1.25.2",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.4",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "pdf-lib": "1.17.1"
+  }
+}

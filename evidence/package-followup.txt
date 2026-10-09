@@ -1,0 +1,5 @@
+
+> @toolrobin/mcp@0.1.0 test:package
+> tsx scripts/verify-package.ts
+
+Package passed: 44 files; clean install; offline npx; 18 tools and 57 verified calls.

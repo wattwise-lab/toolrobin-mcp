@@ -1,0 +1,5 @@
+node_modules/
+dist/
+*.tgz
+evidence/tests-first.txt
+evidence/node22-tests-first.txt

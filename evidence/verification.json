@@ -14,9 +14,175 @@
     "networkDenied": "passed"
   },
   "package": {
+    "verifiedAt": "2026-10-09T10:20:27.764Z",
+    "package": "toolrobin-mcp-0.1.0.tgz",
+    "sha256": "f798a836c976a8fad3385c9234ed2fb661e5d7319d5a673946404e05d859116c",
+    "files": [
+      "LICENSE",
+      "PROVENANCE.json",
+      "README.md",
+      "THIRD_PARTY_NOTICES.txt",
+      "dist/core/base64.d.ts",
+      "dist/core/base64.js",
+      "dist/core/cleanup.d.ts",
+      "dist/core/cleanup.js",
+      "dist/core/compare.d.ts",
+      "dist/core/compare.js",
+      "dist/core/contracts.d.ts",
+      "dist/core/contracts.js",
+      "dist/core/dates.d.ts",
+      "dist/core/dates.js",
+      "dist/core/dedupe.d.ts",
+      "dist/core/dedupe.js",
+      "dist/core/json.d.ts",
+      "dist/core/json.js",
+      "dist/core/meta.d.ts",
+      "dist/core/meta.js",
+      "dist/core/password.d.ts",
+      "dist/core/password.js",
+      "dist/core/percentage.d.ts",
+      "dist/core/percentage.js",
+      "dist/core/qr.d.ts",
+      "dist/core/qr.js",
+      "dist/core/text-stats.d.ts",
+      "dist/core/text-stats.js",
+      "dist/core/timestamp.d.ts",
+      "dist/core/timestamp.js",
+      "dist/core/url.d.ts",
+      "dist/core/url.js",
+      "dist/index.d.ts",
+      "dist/index.js",
+      "dist/server.d.ts",
+      "dist/server.js",
+      "dist/tools.d.ts",
+      "dist/tools.js",
+      "examples/calls.json",
+      "examples/claude-code.json",
+      "examples/claude-desktop.json",
+      "examples/codex.toml",
+      "examples/cursor.json",
+      "package.json"
+    ],
     "cleanInstall": "passed",
-    "offlineNpx": "passed",
-    "sha256": "9a36c1e7ea1dee1fabad8fa1705429ca865f31b99a6041515ce9977551a8c7b9"
+    "launch": "npx local tarball, offline, from a clean temporary project",
+    "server": {
+      "name": "toolrobin-mcp",
+      "version": "0.1.0"
+    },
+    "toolCount": 18,
+    "toolCalls": 57,
+    "ping": "passed",
+    "serverStderr": "empty",
+    "results": [
+      {
+        "tool": "toolrobin_word_counter",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_text_cleanup",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_text_compare",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_remove_duplicate_lines",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_base64_encode",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_base64_decode",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_url_encode",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_url_decode",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_json_format",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_json_minify",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_timestamp_to_date",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_date_to_timestamp",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_date_difference",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_date_add_days",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_percentage",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_password_generator",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_qr_code",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      },
+      {
+        "tool": "toolrobin_meta_preview",
+        "normal": "passed",
+        "invalid": "rejected",
+        "unknownArgument": "rejected"
+      }
+    ]
   },
   "configurationLaunchCommands": [
     {
@@ -135,5 +301,14 @@
     "evidence": "hardening.json",
     "issuesFixed": 3,
     "tests": 74
+  },
+  "pdfPilot": {
+    "separateOptIn": true,
+    "source": "packages/pdf-pilot",
+    "verification": "packages/pdf-pilot/evidence/verification.json",
+    "normalTestsPerRuntime": 10,
+    "actualCodexCalls": 4,
+    "npmPublished": false,
+    "clientReadGrantsChanged": false
   }
 }

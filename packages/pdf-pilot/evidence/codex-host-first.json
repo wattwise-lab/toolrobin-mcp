@@ -1,0 +1,14 @@
+{
+  "verifiedAt": "2026-10-09T10:01:12.367Z",
+  "clientVersion": "codex-cli 0.162.0-alpha.2",
+  "actualAssistantCalls": 3,
+  "normalResultChecks": 2,
+  "traversalRejected": true,
+  "recovery": true,
+  "naturalRequest": true,
+  "otherActions": 0,
+  "rawEventsStored": false,
+  "status": "incomplete",
+  "exitCode": 0,
+  "stderrBytes": 710
+}

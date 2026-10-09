@@ -4,6 +4,8 @@
 
 This is an independent MIT project. Building and running it does not need access to ToolRobin's private website repository. Phase 1 does not change the website.
 
+An optional [local PDF pilot](https://github.com/wattwise-lab/toolrobin-mcp/tree/main/packages/pdf-pilot) runs as a separate process with an explicitly selected read directory. It returns Markdown with page references and extraction warnings. It grants no file access to the 18 operations below, performs no OCR, and is not published to npm.
+
 ## Start from source
 
 Requires Node.js **22.12.0 or newer** and npm. From this repository:

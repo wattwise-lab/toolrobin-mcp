@@ -1,0 +1,26 @@
+
+> @toolrobin/mcp-files-pilot@0.1.0 test
+> npm run build && tsx --test tests/*.test.ts
+
+
+> @toolrobin/mcp-files-pilot@0.1.0 build
+> tsc -p tsconfig.json
+
+✔ read root must be existing absolute directory (53.803334ms)
+✔ reads a regular PDF including nested spaces without altering it (7.979209ms)
+✔ rejects traversal, absolute paths, wrong extensions and control characters (0.934917ms)
+✔ rejects final and ancestor symlinks before decoding (8.047291ms)
+✔ rejects missing, non-PDF and oversize files without leaking absolute paths (6.138667ms)
+✔ same website engine extracts real text and numbered pages in both profiles (907.0555ms)
+✔ corrupt, scanned and 101-page PDFs are refused; a later valid PDF succeeds (1320.496375ms)
+✔ request cancellation terminates the worker and permits retry (376.51325ms)
+✔ actual 30-second deadline terminates a stuck worker and permits retry (30335.034916ms)
+✔ stdio: one tool, readable result, malformed arguments and recovery with network APIs denied (1744.180667ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 35538.197542
