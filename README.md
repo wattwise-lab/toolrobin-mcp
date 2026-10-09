@@ -50,15 +50,25 @@ First build the project. Replace both example paths with the absolute paths on y
 
 Merge the `toolrobin` entry into existing configuration; preserve your other servers. You can generate locally resolved examples with `npm run test:config`. It writes `evidence/local-clients/` without modifying any client settings.
 
-| Client         | Configuration location                                                                                                           | What to check                                                                 |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| Claude Desktop | macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`; Windows: `%APPDATA%\Claude\claude_desktop_config.json` | Restart the app; check that the local server connects and tools appear.       |
-| Claude Code    | `.mcp.json` at the project root                                                                                                  | Approve the project server when prompted; check `/mcp` and `claude mcp list`. |
-| Cursor         | `.cursor/mcp.json` at the project root, or `~/.cursor/mcp.json` for a user configuration                                         | Check the MCP server status and tool list.                                    |
+| Client                      | Configuration location                                                                                                           | What to check                                                                 |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| Claude Desktop              | macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`; Windows: `%APPDATA%\Claude\claude_desktop_config.json` | Restart the app; check that the local server connects and tools appear.       |
+| Claude Code                 | `.mcp.json` at the project root                                                                                                  | Approve the project server when prompted; check `/mcp` and `claude mcp list`. |
+| Cursor                      | `.cursor/mcp.json` at the project root, or `~/.cursor/mcp.json` for a user configuration                                         | Check the MCP server status and tool list.                                    |
+| Codex CLI / ChatGPT desktop | `~/.codex/config.toml`, shared by the local clients on the same host                                                             | Restart the desktop app; inspect the local MCP server and tools.              |
 
-The same JSON shape is saved in `examples/claude-desktop.json`, `examples/claude-code.json` and `examples/cursor.json`. These portable files use a placeholder server path. The verification script substitutes absolute paths and exercises all 18 tools through each launch command. **That tests the commands, not the three applications' UIs.** Actual host evidence, where available, is recorded separately in `evidence/`.
+The JSON templates are saved in `examples/claude-desktop.json`, `examples/claude-code.json` and `examples/cursor.json`. Cursor also specifies `"type": "stdio"` in its server entry. These portable files use a placeholder server path. The verification script substitutes absolute paths and exercises all 18 tools through each launch command. **That tests the commands, not the three applications' UIs.** Actual host evidence, where available, is recorded separately in `evidence/`.
 
-Official setup references: [Claude Desktop local MCP](https://modelcontextprotocol.io/docs/develop/connect-local-servers), [Claude Code MCP](https://code.claude.com/docs/en/mcp), [Cursor MCP](https://prod.cursor.com/docs/mcp).
+For Codex CLI, add the built server with the official command, using your resolved paths:
+
+```sh
+codex mcp add toolrobin -- /ABSOLUTE/PATH/TO/node /ABSOLUTE/PATH/toolrobin-mcp/dist/index.js
+codex mcp get toolrobin
+```
+
+The equivalent TOML entry is in `examples/codex.toml`. Back up existing settings before merging configuration and preserve other entries. ChatGPT desktop supports this local stdio configuration; browser-based ChatGPT needs a remote connector and is **outside this stdio-only phase**. A configured server or a successful tool listing does not prove an assistant used it.
+
+Official setup references: [Claude Desktop local MCP](https://modelcontextprotocol.io/docs/develop/connect-local-servers), [Claude Code MCP](https://code.claude.com/docs/en/mcp), [Cursor MCP](https://cursor.com/docs/mcp), [OpenAI local MCP configuration](https://learn.chatgpt.com/docs/extend/mcp?surface=cli).
 
 ## Tools
 
@@ -141,7 +151,7 @@ A human-facing request can be: “Use ToolRobin to remove duplicate lines from t
 - Comparison: at most **1,500 lines per draft**, literal line comparison rather than semantic similarity. Word counting reports Latin/number tokens and separate Han characters; it is not a universal language segmentation algorithm.
 - JSON: at most **100 nesting levels**. Numeric spelling, duplicate keys and key order are preserved; this is formatting, not schema validation or repair. Results over **1 MiB of serialized data** are rejected rather than truncated.
 - Stdio: **1 MiB incoming-buffer cap**. Protocol framing failures close the transport. Ordinary invalid tool inputs return errors and leave the session usable. UTF-8 byte limits and UTF-16 field limits are different.
-- Base64: textual UTF-8 only; standard and URL-safe decoding accepted, malformed padding/UTF-8 rejected. URL codec encodes a component, not a whole URL; decoding does not treat `+` as a space.
+- Base64: textual UTF-8 only; standard and URL-safe decoding accepted, malformed padding/UTF-8 rejected. Leading BOM characters are preserved during text round trips. URL codec encodes a component, not a whole URL; decoding does not treat `+` as a space.
 - Calendar dates: real `YYYY-MM-DD` dates, years **0001–9999**. Day offsets are integers from **−3,652,058 to 3,652,058**; the resulting date must stay in range. Date-time conversion requires seconds and an explicit `Z` or numeric timezone; Unix input requires an explicit seconds/milliseconds unit and whole-number value.
 - Percentages: decimal strings with at most **15 integer digits and 6 fractional digits**, no units or exponents. BigInt arithmetic avoids floating-point input rounding. Results round to at most six decimal places and flag approximation. Zero or invalid denominators are rejected.
 - Passwords: **8–64** characters, one or ten at a time, using `crypto.getRandomValues` with rejection sampling. Selected groups each appear. `excludeAmbiguous` excludes `0 O 1 l I`. The entropy meter is an estimate; prefer unique passwords and a password manager. An AI host may retain passwords in the conversation.
@@ -175,7 +185,27 @@ npm run test:package
 
 `npm test` builds first, runs each tool's normal, invalid and unknown-field cases, then checks edge cases, source provenance, independent QR decoding and actual stdio operation with outbound APIs disabled. The package check builds a tarball, installs it in a clean temporary project and starts it through npx. Evidence records names, counts and assertions; it does not save generated passwords or arbitrary user inputs.
 
+An optional **real assistant** check is available for an installed, authenticated Codex CLI:
+
+```sh
+npm run test:codex
+```
+
+This consumes the client's normal model quota. It uses synthetic data in a temporary workspace, observes actual MCP calls, independently checks all 18 results, and checks invalid inputs, session recovery and two natural-language parameter choices. It stores only checks and counts in `evidence/codex.json`, never raw events or generated passwords. This is separate from the SDK protocol tests.
+
+For an installed, authenticated **official Cursor CLI**:
+
+First configure this project's built server in `~/.cursor/mcp.json` and approve `toolrobin` with the official Cursor CLI. The runner verifies that the client entry points to this project's current build.
+
+```sh
+npm run test:cursor -- /ABSOLUTE/PATH/TO/cursor-agent
+```
+
+The runner creates a disposable workspace with only `Mcp(toolrobin:*)` allowed, and shell, file and web tools denied. It does not change global permissions or use `--force`. Cursor's MCP server approval and its individual tool permissions are separate; listing the tools alone can succeed while execution is denied. See the [official Cursor permissions reference](https://cursor.com/docs/cli/reference/permissions). This check also consumes model quota and stores only assertions in `evidence/cursor.json`. Use the Cursor executable's full path if another program also calls its CLI `agent`.
+
 See `evidence/verification.json` for dated results and the distinction between protocol, package, launch-command and actual application verification. No GitHub Actions run is needed. There is no automatic npm publication.
+
+Current host acceptance (2026-10-09): Codex CLI and Cursor CLI each made 24 observed calls, covering all 18 tools, three invalid inputs, recovery and two natural-language requests. Claude Desktop is installed and configured, but its required signed-in assistant check is still pending. Claude Code connected in a health check; the available account's login page requires Pro/Max for actual assistant use. Native desktop GUI calls are not inferred from CLI checks. This phase is not marked fully accepted until the Claude Desktop requirement is met.
 
 ## Source and license
 

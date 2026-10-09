@@ -95,6 +95,22 @@ test("Base64 strict UTF-8, URL-safe input, Unicode and padding", () => {
   assert.throws(() => executeTool("toolrobin_base64_decode", { text: "Y===" }));
   assert.equal(executeTool("toolrobin_base64_encode", { text: "" }).output, "");
 });
+test("Base64 round trips leading BOM characters, including URL-safe and spaced input", () => {
+  for (const text of ["\uFEFFHi", "\uFEFF\uFEFF你好", "\uFEFF", "Hi\uFEFF"]) {
+    const encoded = executeTool("toolrobin_base64_encode", { text })
+      .output as string;
+    assert.equal(
+      executeTool("toolrobin_base64_decode", { text: encoded }).output,
+      text,
+    );
+    assert.equal(
+      executeTool("toolrobin_base64_decode", {
+        text: "\n" + encoded.replace(/\//g, "_") + "\t",
+      }).output,
+      text,
+    );
+  }
+});
 test("calendar boundaries, reverse inclusive days and exact large percentage values", () => {
   assert.equal(
     executeTool("toolrobin_date_add_days", { start: "0001-01-01", days: 0 })

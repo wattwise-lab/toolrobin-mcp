@@ -1,0 +1,181 @@
+{
+  "verifiedAt": "2026-10-09T05:45:52.104Z",
+  "clientVersion": "2026.10.01-e373342",
+  "actualAIHost": true,
+  "scope": "Authenticated Cursor CLI in disposable workspace; only ToolRobin allowed; shell/files/web denied; synthetic data; raw events/passwords not stored.",
+  "status": "passed",
+  "exitCode": 0,
+  "turnCompleted": true,
+  "observedToolCalls": 24,
+  "nonMcpActions": 0,
+  "unexpectedToolCalls": 0,
+  "stderrBytes": 0,
+  "results": [
+    {
+      "tool": "toolrobin_word_counter",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_text_cleanup",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_text_compare",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_remove_duplicate_lines",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_base64_encode",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_base64_decode",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_url_encode",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_url_decode",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_json_format",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_json_minify",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_timestamp_to_date",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_date_to_timestamp",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_date_difference",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_date_add_days",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_percentage",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_password_generator",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_qr_code",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    },
+    {
+      "tool": "toolrobin_meta_preview",
+      "actualAssistantCall": true,
+      "independentResultCheck": "passed",
+      "resultKinds": [
+        "success"
+      ]
+    }
+  ],
+  "errorChecks": [
+    {
+      "tool": "toolrobin_json_format",
+      "actualAssistantCall": true,
+      "rejected": true
+    },
+    {
+      "tool": "toolrobin_percentage",
+      "actualAssistantCall": true,
+      "rejected": true
+    },
+    {
+      "tool": "toolrobin_date_difference",
+      "actualAssistantCall": true,
+      "rejected": true
+    }
+  ],
+  "sessionRecovery": true,
+  "naturalRequests": {
+    "percentageMode": true,
+    "comparisonOnlyTrimming": true
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "verifiedAt": "2026-10-09T04:41:27.279Z",
+  "verifiedAt": "2026-10-09T05:47:08.410Z",
   "package": "toolrobin-mcp-0.1.0.tgz",
-  "sha256": "7c3a600058100e4057330c5be4f3903e7d79a91af75334f845d98f6bda752c04",
+  "sha256": "c4dede5438fb0d23413a543be4dcec0396d18038f510c9e488b2d9112f31ec57",
   "files": [
     "LICENSE",
     "PROVENANCE.json",
@@ -44,6 +44,7 @@
     "examples/calls.json",
     "examples/claude-code.json",
     "examples/claude-desktop.json",
+    "examples/codex.toml",
     "examples/cursor.json",
     "package.json"
   ],

@@ -1,0 +1,3 @@
+[mcp_servers.toolrobin]
+command = "/ABSOLUTE/PATH/TO/node"
+args = ["/ABSOLUTE/PATH/toolrobin-mcp/dist/index.js"]

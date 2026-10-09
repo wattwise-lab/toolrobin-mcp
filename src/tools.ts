@@ -34,6 +34,16 @@ const nonblank = () =>
     message: "Enter non-blank text.",
   });
 const bool = (value: boolean) => z.boolean().default(value);
+// The browser decoder treats a leading UTF-8 BOM as a file marker. MCP accepts
+// text, so restore that character after the original strict decoder validates it.
+function decodeBase64PreservingBom(input: string) {
+  const output = decodeBase64Text(input);
+  const normalized = input
+    .replace(/\s+/gu, "")
+    .replace(/-/gu, "+")
+    .replace(/_/gu, "/");
+  return normalized.startsWith("77u/") ? "\uFEFF" + output : output;
+}
 const decimal = () =>
   z
     .string()
@@ -106,9 +116,18 @@ export const tools: ToolDefinition[] = [
     "text-cleanup",
     {
       text: nonblank(),
-      trimLines: bool(true),
-      collapseSpaces: bool(true),
-      lineBreaks: z.enum(["keep", "paragraphs", "single"]).default("keep"),
+      trimLines: bool(true).describe(
+        "Trim horizontal whitespace at each line's edges.",
+      ),
+      collapseSpaces: bool(true).describe(
+        "Collapse repeated horizontal spaces and tabs to one space.",
+      ),
+      lineBreaks: z
+        .enum(["keep", "paragraphs", "single"])
+        .default("keep")
+        .describe(
+          "keep preserves line breaks; paragraphs joins adjacent lines, keeping blank-line paragraph breaks; single joins nonblank trimmed lines with spaces.",
+        ),
     },
     ({ text, ...options }) => ({ output: cleanupText(text, options) }),
   ),
@@ -119,8 +138,12 @@ export const tools: ToolDefinition[] = [
     {
       before: text(),
       after: text(),
-      ignoreCase: bool(false),
-      trimEdges: bool(false),
+      ignoreCase: bool(false).describe(
+        "Ignore case when comparing lines; keep original text in results.",
+      ),
+      trimEdges: bool(false).describe(
+        "Ignore leading/trailing line whitespace for comparison; keep original text in results.",
+      ),
     },
     ({ before, after, ...options }) => ({
       ...compareText(before, after, options),
@@ -132,9 +155,15 @@ export const tools: ToolDefinition[] = [
     "remove-duplicate-lines",
     {
       text: nonblank(),
-      ignoreCase: bool(false),
-      trim: bool(false),
-      removeBlank: bool(false),
+      ignoreCase: bool(false).describe(
+        "Ignore case when detecting duplicates; retain the first original line.",
+      ),
+      trim: bool(false).describe(
+        "Trim for duplicate detection only; retained lines keep original spaces.",
+      ),
+      removeBlank: bool(false).describe(
+        "Remove empty and whitespace-only lines.",
+      ),
     },
     ({ text, ...options }) => ({ ...dedupeLines(text, options) }),
   ),
@@ -147,10 +176,13 @@ export const tools: ToolDefinition[] = [
   ),
   define(
     "base64_decode",
-    "Decode standard or URL-safe Base64 to strictly valid UTF-8 text.",
+    "Decode standard or URL-safe Base64 to strictly valid UTF-8 text, preserving a leading BOM character.",
     "base64-codec",
     { text: text() },
-    ({ text }) => ({ output: decodeBase64Text(text), encoding: "UTF-8" }),
+    ({ text }) => ({
+      output: decodeBase64PreservingBom(text),
+      encoding: "UTF-8",
+    }),
   ),
   define(
     "url_encode",
@@ -194,8 +226,15 @@ export const tools: ToolDefinition[] = [
       value: z
         .string()
         .max(17)
-        .regex(/^-?\d{1,16}$/),
-      unit: z.enum(["seconds", "milliseconds"]),
+        .regex(/^-?\d{1,16}$/)
+        .describe(
+          "Signed whole-number timestamp string; the resulting milliseconds must be within ±8,640,000,000,000,000.",
+        ),
+      unit: z
+        .enum(["seconds", "milliseconds"])
+        .describe(
+          "Choose the input unit explicitly; no automatic unit guessing.",
+        ),
     },
     ({ value, unit }) => ({ ...timestampToDate(value, unit) }),
   ),
@@ -203,14 +242,28 @@ export const tools: ToolDefinition[] = [
     "date_to_timestamp",
     "Convert a valid ISO date-time with an explicit timezone to Unix seconds, milliseconds and UTC.",
     "timestamp-converter",
-    { value: z.string().max(35).min(20) },
+    {
+      value: z
+        .string()
+        .max(35)
+        .min(20)
+        .describe(
+          "YYYY-MM-DDTHH:mm:ss[.SSS]Z or an explicit ±HH:mm offset; include seconds and a timezone.",
+        ),
+    },
     ({ value }) => ({ ...dateToTimestamp(value) }),
   ),
   define(
     "date_difference",
     "Calculate signed calendar-day differences between two real dates with optional inclusive counting.",
     "date-calculator",
-    { start: day(), end: day(), inclusive: bool(false) },
+    {
+      start: day(),
+      end: day(),
+      inclusive: bool(false).describe(
+        "Count both endpoints: add one for forward/same dates, subtract one for reverse dates.",
+      ),
+    },
     ({ start, end, inclusive }) => ({
       days: dateDifference(start, end, inclusive),
       inclusive,

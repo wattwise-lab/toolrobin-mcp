@@ -47,7 +47,9 @@
     "check": "tsc -p tsconfig.check.json",
     "notices": "node scripts/generate-notices.mjs",
     "pretest": "npm run build",
-    "test:package": "tsx scripts/verify-package.ts"
+    "test:package": "tsx scripts/verify-package.ts",
+    "test:codex": "tsx scripts/verify-codex.ts",
+    "test:cursor": "tsx scripts/verify-cursor.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.32.1",
@@ -59,7 +61,7 @@
     "@types/qrcode": "1.5.5",
     "jsqr": "1.4.0",
     "prettier": "3.6.2",
-    "tsx": "4.21.0",
+    "tsx": "4.23.15",
     "typescript": "5.9.3"
   },
   "publishConfig": {

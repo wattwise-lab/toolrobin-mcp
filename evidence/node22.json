@@ -1,7 +1,7 @@
 {
-  "verifiedAt": "2026-10-09T05:31:34.294Z",
-  "transport": "stdio",
-  "networkDenied": true,
+  "verifiedAt": "2026-10-09T05:49:11.046Z",
+  "node": "v22.12.0",
+  "networkApisDenied": true,
   "server": {
     "name": "toolrobin-mcp",
     "version": "0.1.0"

@@ -1,0 +1,27 @@
+{
+  "reviewedAt": "2026-10-09T05:50:04.309Z",
+  "reviewer": "Implementation self-review; no independent third-party audit claimed",
+  "sourceChanges": [
+    "Preserve leading UTF-8 BOM in text Base64 decoding without changing copied website core.",
+    "Clarify comparison-only trim/case options, line joining, explicit timestamp units and inclusive date direction.",
+    "Declare Cursor stdio transport and document execution permissions separately from server discovery.",
+    "Update tsx to 4.23.15 and resolved esbuild to 0.28.2 to remove the reported development dependency advisory."
+  ],
+  "checks": {
+    "inputValidation": "Strict schemas, type/size bounds, unknown arguments, Unicode errors and oversized frames covered.",
+    "allocationBounds": "100,000 UTF-16 units, 1,500 comparison lines, 100 JSON nesting levels, 1 MiB result and incoming buffer guards.",
+    "resultCorrectness": "Big numeric JSON tokens, decimal arithmetic, calendar boundaries, QR independently decoded, cryptographic password constraints covered.",
+    "privacy": "Runtime source has no file reads/writes, command execution or outbound requests; protocol checks deny network APIs and listeners; no arbitrary inputs/passwords saved in evidence.",
+    "provenance": "14 copied core files remain hash-matched to PROVENANCE.json; source algorithms not rewritten.",
+    "packaging": "MIT, third-party notices, portable templates, clean install and offline local-tarball npx verified.",
+    "actualAIHosts": "Codex CLI and Cursor CLI independently checked 18 tools, expected errors, recovery and natural-language parameter selection.",
+    "existingClientSettings": "Other Codex entries preserved; Cursor per-tool test permissions apply only in disposable workspaces; existing agent executable preserved."
+  },
+  "limitations": [
+    "Claude Desktop signed-in assistant requirement remains outstanding.",
+    "Claude Code actual assistant use is blocked by the available account subscription.",
+    "Native ChatGPT/Cursor GUI calls are not inferred from CLI evidence.",
+    "Browser-based ChatGPT remote integration and npm registry publication remain outside Phase 1.",
+    "AI hosts may transmit or store conversation and tool results under their own policies."
+  ]
+}

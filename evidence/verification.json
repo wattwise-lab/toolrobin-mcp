@@ -1,11 +1,11 @@
 {
-  "verifiedAt": "2026-10-09T04:48:04.633Z",
+  "verifiedAt": "2026-10-09T05:50:04.309Z",
   "node": "v24.18.0",
   "build": "passed",
   "typeCheck": "passed (source, tests, scripts)",
   "unitAndIntegrationTests": {
-    "total": 66,
-    "passed": 66,
+    "total": 67,
+    "passed": 67,
     "failed": 0
   },
   "stdio": {
@@ -16,7 +16,7 @@
   "package": {
     "cleanInstall": "passed",
     "offlineNpx": "passed",
-    "sha256": "7c3a600058100e4057330c5be4f3903e7d79a91af75334f845d98f6bda752c04"
+    "sha256": "c4dede5438fb0d23413a543be4dcec0396d18038f510c9e488b2d9112f31ec57"
   },
   "configurationLaunchCommands": [
     {
@@ -46,17 +46,27 @@
     "clientVersion": "2.1.295 (Claude Code)",
     "healthCheck": "passed",
     "authenticated": false,
-    "actualAssistantToolCalls": "not verified by health check",
-    "scope": "Temporary isolated Claude Code profile; existing user configuration untouched."
+    "actualAssistantToolCalls": "not verified; health check is not an assistant invocation",
+    "scope": "Temporary isolated Claude Code profile; existing user configuration untouched.",
+    "availableAccountLogin": "blocked by required Pro/Max subscription",
+    "projectConfiguration": "prepared locally; not committed with machine-specific paths"
   },
   "claudeDesktop": {
-    "status": "installed and configured; actual assistant calls pending",
+    "status": "installed and configured; required signed-in assistant calls pending",
     "version": "2.31226.0",
-    "reason": "User will sign in to the official desktop client. Native UI control could not attach during first launch; no login or tool-call success is claimed."
+    "reason": "Official desktop client still at login. No actual assistant invocation is claimed."
   },
   "cursor": {
-    "status": "not verified in application",
-    "reason": "Application is not installed; launch template verified through SDK only."
+    "status": "passed",
+    "actualAIHost": true,
+    "clientVersion": "2026.10.01-e373342",
+    "observedToolCalls": 24,
+    "independentToolResults": 18,
+    "invalidInputs": 3,
+    "recovery": true,
+    "naturalRequests": 2,
+    "evidence": "cursor.json",
+    "nativeGUI": "not verified; CLI verification is separate"
   },
   "website": {
     "modified": false
@@ -68,7 +78,10 @@
     "published": false
   },
   "definitionOfDone": {
-    "status": "development and protocol/package checks complete; actual Claude Desktop assistant calls still pending"
+    "status": "not fully accepted: Claude Desktop assistant invocation still required",
+    "remaining": [
+      "Sign in to official Claude Desktop and verify real assistant discovery and calls."
+    ]
   },
   "publicRepository": {
     "url": "https://github.com/wattwise-lab/toolrobin-mcp",
@@ -78,6 +91,36 @@
       "tests": 66,
       "failed": 0
     },
-    "note": "Subsequent change clarifies parameter descriptions only; latest local stdio/package checks passed again."
+    "note": "This review adds BOM round-trip preservation, clearer AI parameter descriptions, real Codex/Cursor host evidence and a development dependency security update. A fresh clone will be checked after publication."
+  },
+  "minimumRuntime": {
+    "node": "v22.12.0",
+    "tools": 18,
+    "calls": 57,
+    "networkApisDenied": true,
+    "status": "passed",
+    "evidence": "node22.json"
+  },
+  "dependencyAudit": {
+    "productionVulnerabilities": 0,
+    "allVulnerabilities": 0,
+    "reviewedAt": "2026-10-09T05:50:04.309Z",
+    "source": "npm audit JSON reports, including development dependencies"
+  },
+  "codex": {
+    "status": "passed",
+    "actualAIHost": true,
+    "clientVersion": "codex-cli 0.162.0-alpha.2",
+    "observedToolCalls": 24,
+    "independentToolResults": 18,
+    "invalidInputs": 3,
+    "recovery": true,
+    "naturalRequests": 2,
+    "evidence": "codex.json"
+  },
+  "chatgptDesktop": {
+    "configuration": "local shared Codex stdio entry added, preserving other settings",
+    "nativeGUI": "not verified; requires restart and its own assistant check",
+    "actualCodexCLI": "passed separately"
   }
 }
