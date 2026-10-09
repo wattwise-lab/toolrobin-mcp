@@ -1,0 +1,123 @@
+{
+  "verifiedAt": "2026-10-09T04:21:08.499Z",
+  "transport": "stdio",
+  "networkDenied": false,
+  "server": {
+    "name": "toolrobin-mcp",
+    "version": "0.1.0"
+  },
+  "toolCount": 18,
+  "toolCalls": 57,
+  "ping": "passed",
+  "serverStderr": "empty",
+  "results": [
+    {
+      "tool": "toolrobin_word_counter",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_text_cleanup",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_text_compare",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_remove_duplicate_lines",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_base64_encode",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_base64_decode",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_url_encode",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_url_decode",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_json_format",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_json_minify",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_timestamp_to_date",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_date_to_timestamp",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_date_difference",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_date_add_days",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_percentage",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_password_generator",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_qr_code",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    },
+    {
+      "tool": "toolrobin_meta_preview",
+      "normal": "passed",
+      "invalid": "rejected",
+      "unknownArgument": "rejected"
+    }
+  ]
+}

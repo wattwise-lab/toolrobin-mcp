@@ -1,0 +1,107 @@
+{
+  "sourceRepository": "https://github.com/wattwise-lab/toolrobin",
+  "sourceRevision": "d9053140aa1f3eb598054a1eff777debdebc2d3c",
+  "copiedOn": "2026-10-09",
+  "permission": "Repository owner explicitly authorized copying the ToolRobin pure functions into this independent MIT project. No private repository access is needed to build or run it.",
+  "files": [
+    {
+      "source": "src/tools/text/cleanup-core.ts",
+      "destination": "src/core/cleanup.ts",
+      "sourceSha256": "00b7a7d6d4a92117453c20d853abce43679b6383743bd1bdab20f32e8e76fb66",
+      "copiedSha256": "bf2eca6e6ccc0dc4e48bc23204553eaff5d52e2cd95eeb9e3b46b882af21c52c",
+      "adaptation": "ESM import path only"
+    },
+    {
+      "source": "src/tools/text/dedupe-core.ts",
+      "destination": "src/core/dedupe.ts",
+      "sourceSha256": "10fbeb374de6bd16cd1b61091442abf22b989c5f247d9bb1d41cdd1c3f6fe323",
+      "copiedSha256": "e14d6ccb1f9208f2130d40edf1c08fdb01047dc29af42e6f0e820ab50584a505",
+      "adaptation": "source unchanged apart from provenance comment"
+    },
+    {
+      "source": "src/tools/text/base64-core.ts",
+      "destination": "src/core/base64.ts",
+      "sourceSha256": "718f737f039eb31dca1cafa19be1e68c8cda61be755f81ed2cacaf836dbaf496",
+      "copiedSha256": "3369779a904bac56adc71be3786c11348a3426c8dea28ea05dcd4c05157b6c49",
+      "adaptation": "ESM import path only"
+    },
+    {
+      "source": "src/tools/password/core.ts",
+      "destination": "src/core/password.ts",
+      "sourceSha256": "cbe16758c5e0a2293d59db8622291f9e96b4b432d17ceace4c658e22579eaa18",
+      "copiedSha256": "78d806bb56c7bcdbfecb89f85aa4b6d12dcc8f4f16489e8e550b9486e434a943",
+      "adaptation": "source unchanged apart from provenance comment"
+    },
+    {
+      "source": "src/tools/calculation/dates-core.ts",
+      "destination": "src/core/dates.ts",
+      "sourceSha256": "38e13ce38ad171696df380d7bd24a5753125821201a07938c8db82d8a984769c",
+      "copiedSha256": "e7edb62238d7e6efdcb6e2a24cb54b25e0a206daea64746d0ab9d2b9bd38c842",
+      "adaptation": "source unchanged apart from provenance comment"
+    },
+    {
+      "source": "src/tools/calculation/percentage-core.ts",
+      "destination": "src/core/percentage.ts",
+      "sourceSha256": "6673f28364df5190b609f9a826fef8754cc397038401e6ce613482b7c3f19a7f",
+      "copiedSha256": "2781cf32309ec45e56fe831cfa3a1c269ad1ebb773e4cf84ba3b1328d906847f",
+      "adaptation": "source unchanged apart from provenance comment"
+    },
+    {
+      "source": "src/tools/timestamp/core.ts",
+      "destination": "src/core/timestamp.ts",
+      "sourceSha256": "ee81db1a35b15e2f6ee159019904c78d8dd86c8617b93f1ba91e5a598a1ed236",
+      "copiedSha256": "ae08dcc9a877997711b2c16e10789b1f2a9bfbdcfda3e571e7f2a70cdd8b4eae",
+      "adaptation": "source unchanged apart from provenance comment"
+    },
+    {
+      "source": "src/tools/compare/core.ts",
+      "destination": "src/core/compare.ts",
+      "sourceSha256": "0f8d963afc6d5f394a25fd7a76fbbbc2c52866e895062096a6e83ea4d28969f5",
+      "copiedSha256": "70b2b8e5608c8c763eeaf9c7f416f0964b588c9000f159c15bacc9b8a7cf4ee6",
+      "adaptation": "source unchanged apart from provenance comment"
+    },
+    {
+      "source": "src/tools/seo/meta-core.ts",
+      "destination": "src/core/meta.ts",
+      "sourceSha256": "742c9bed21fd46b43fd2e8bce5e3e34041672c47cbe5a803cbd1fb9052f03dc5",
+      "copiedSha256": "44bf97e1412d7fb4db27afadc85d93fb422bb814a0e4c2f1b8c58b6845dd08c3",
+      "adaptation": "source unchanged apart from provenance comment"
+    },
+    {
+      "source": "src/tools/qr/core.ts",
+      "destination": "src/core/qr.ts",
+      "sourceSha256": "658fbe59c15b51c2436f3caabf70d0b2d785f3254d4990800e04ab8b508d9891",
+      "copiedSha256": "21781b84a6977e1fc9de43ef739aa82cb4482bf0cc276d75caff3cff85f1a03c",
+      "adaptation": "source unchanged apart from provenance comment"
+    },
+    {
+      "source": "src/tools/modules/text-stats.ts",
+      "destination": "src/core/text-stats.ts",
+      "sourceSha256": "bafa97ff48bb84ac3c3fbaac5d11f051b78f918255696518c4407eea2c5493aa",
+      "copiedSha256": "91b703608f7ed3a6725841ca577b4ae4eadb386c83a730e9ff920c70f95a9602",
+      "adaptation": "Pure exported function extracted verbatim; browser mount/imports excluded; ESM validation import substituted"
+    },
+    {
+      "source": "src/tools/modules/json-format.ts",
+      "destination": "src/core/json.ts",
+      "sourceSha256": "fd2f5d41de50d7b6e3dbc078e389574a2f79bc6b2d610410845c52829eec4f3c",
+      "copiedSha256": "7e90065e399657b92c65721178709485cc1ff660647c949ae0613a57840c2ceb",
+      "adaptation": "Pure exported function extracted verbatim; browser mount/imports excluded; ESM validation import substituted"
+    },
+    {
+      "source": "src/tools/modules/url-codec.ts",
+      "destination": "src/core/url.ts",
+      "sourceSha256": "5d2f741bd9980326f21fa56dcd365d35c537a33284d6b5778522f7e75517ce62",
+      "copiedSha256": "8c8fde4836e5a54bccf94d7f25e2a4f1f92a4809a780a820c73c68d709709417",
+      "adaptation": "Pure exported function extracted verbatim; browser mount/imports excluded; ESM validation import substituted"
+    },
+    {
+      "source": "src/tools/contracts.ts",
+      "destination": "src/core/contracts.ts",
+      "sourceSha256": "7b5f6ef078384381abb546f4bab84a864a3aee85f781b94dfb296beeeefbca7e",
+      "copiedSha256": "cedb6de8c9bee6bcf7ea073cea83bc22c125ddce78721a65ed4aa7eede376c5f",
+      "adaptation": "Pure validation/limit excerpt only; browser DOM interfaces omitted"
+    }
+  ],
+  "qrAdapter": "Uses the same pinned qrcode 1.5.4 matrix engine and the original svgFromMatrix; browser OffscreenCanvas/Blob handling is excluded. No PNG/file processing interface."
+}

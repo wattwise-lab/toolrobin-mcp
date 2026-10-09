@@ -1,0 +1,72 @@
+{
+  "verifiedAt": "2026-10-09T04:28:09.353Z",
+  "node": "v24.18.0",
+  "build": "passed",
+  "typeCheck": "passed (source, tests, scripts)",
+  "unitAndIntegrationTests": {
+    "total": 66,
+    "passed": 66,
+    "failed": 0
+  },
+  "stdio": {
+    "tools": 18,
+    "calls": 57,
+    "networkDenied": "passed"
+  },
+  "package": {
+    "cleanInstall": "passed",
+    "offlineNpx": "passed",
+    "sha256": "d8f72386c4a3d3af559d75a3a3c7b7ae6646e63f3c7ce02cefc270339274907e"
+  },
+  "configurationLaunchCommands": [
+    {
+      "template": "claude-desktop.json",
+      "launch": "passed",
+      "toolCount": 18,
+      "calls": 57,
+      "actualHostApplication": "not tested by this script"
+    },
+    {
+      "template": "claude-code.json",
+      "launch": "passed",
+      "toolCount": 18,
+      "calls": 57,
+      "actualHostApplication": "not tested by this script"
+    },
+    {
+      "template": "cursor.json",
+      "launch": "passed",
+      "toolCount": 18,
+      "calls": 57,
+      "actualHostApplication": "not tested by this script"
+    }
+  ],
+  "claudeCode": {
+    "verifiedAt": "2026-10-09T04:27:34.722Z",
+    "clientVersion": "2.1.295 (Claude Code)",
+    "healthCheck": "passed",
+    "authenticated": false,
+    "actualAssistantToolCalls": "not verified by health check",
+    "scope": "Temporary isolated Claude Code profile; existing user configuration untouched."
+  },
+  "claudeDesktop": {
+    "status": "not verified",
+    "reason": "Application is not installed on this Mac; no logged-in assistant session was available."
+  },
+  "cursor": {
+    "status": "not verified in application",
+    "reason": "Application is not installed; launch template verified through SDK only."
+  },
+  "website": {
+    "modified": false
+  },
+  "githubActions": {
+    "run": false
+  },
+  "npmRegistry": {
+    "published": false
+  },
+  "definitionOfDone": {
+    "status": "development and protocol/package checks complete; actual Claude Desktop assistant calls still pending"
+  }
+}

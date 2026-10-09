@@ -1,0 +1,68 @@
+{
+  "name": "@toolrobin/mcp",
+  "version": "0.1.0",
+  "description": "Local-only ToolRobin text and calculation tools for MCP assistants over stdio.",
+  "type": "module",
+  "license": "MIT",
+  "author": "ToolRobin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wattwise-lab/toolrobin-mcp.git"
+  },
+  "homepage": "https://github.com/wattwise-lab/toolrobin-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/wattwise-lab/toolrobin-mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "tools",
+    "claude",
+    "toolrobin",
+    "stdio",
+    "privacy",
+    "text",
+    "calculator"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "bin": {
+    "toolrobin-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE",
+    "PROVENANCE.json",
+    "THIRD_PARTY_NOTICES.txt",
+    "examples/"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsx --test tests/*.test.ts",
+    "verify": "npm run check && npm test",
+    "prepack": "npm run build",
+    "test:stdio": "tsx scripts/verify-stdio.ts",
+    "test:config": "tsx scripts/verify-config.ts",
+    "check": "tsc -p tsconfig.check.json",
+    "notices": "node scripts/generate-notices.mjs",
+    "pretest": "npm run build",
+    "test:package": "tsx scripts/verify-package.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "qrcode": "1.5.4",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.4",
+    "@types/qrcode": "1.5.5",
+    "jsqr": "1.4.0",
+    "prettier": "3.6.2",
+    "tsx": "4.21.0",
+    "typescript": "5.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

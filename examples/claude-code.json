@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "toolrobin": {
+      "command": "node",
+      "args": ["/ABSOLUTE/PATH/toolrobin-mcp/dist/index.js"]
+    }
+  }
+}

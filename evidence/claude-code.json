@@ -1,0 +1,8 @@
+{
+  "verifiedAt": "2026-10-09T04:27:34.722Z",
+  "clientVersion": "2.1.295 (Claude Code)",
+  "healthCheck": "passed",
+  "authenticated": false,
+  "actualAssistantToolCalls": "not verified by health check",
+  "scope": "Temporary isolated Claude Code profile; existing user configuration untouched."
+}

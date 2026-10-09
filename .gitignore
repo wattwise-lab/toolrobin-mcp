@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.cache-npm/
+*.tgz
+.DS_Store
+*.log
+evidence/local-clients/
