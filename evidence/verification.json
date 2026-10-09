@@ -1,5 +1,5 @@
 {
-  "verifiedAt": "2026-10-09T06:17:14.560Z",
+  "verifiedAt": "2026-10-09T06:20:19.062Z",
   "node": "v24.18.0",
   "build": "passed",
   "typeCheck": "passed (source, tests, scripts)",
@@ -86,17 +86,17 @@
   "publicRepository": {
     "url": "https://github.com/wattwise-lab/toolrobin-mcp",
     "cleanClone": {
-      "verifiedAt": "2026-10-09T05:52:33.493Z",
-      "testedRevision": "b943e097a60367016572a55a72423cd9475bb0f2",
-      "source": "Fresh HTTPS clone of public repository into unrelated temporary directory; private website checkout not used.",
+      "verifiedAt": "2026-10-09T06:19:25.455Z",
+      "testedRevision": "a006821c858fb7ae09025b64534b459d6ae885e7",
+      "source": "Fresh HTTPS clone of public repository into an unrelated temporary directory; private website checkout not used.",
       "cleanInstall": "passed",
       "typeCheck": "passed",
       "build": "passed",
-      "tests": 67,
-      "passed": 67,
+      "tests": 74,
+      "passed": 74,
       "failed": 0
     },
-    "note": "The previous clean-clone result is historical; the follow-up source has local and host checks. A fresh public clone will be recorded after publication."
+    "note": "The tested revision contains the final follow-up source. The subsequent commit only records this fresh-public-clone result; source and package are unchanged."
   },
   "minimumRuntime": {
     "node": "v22.12.0",
