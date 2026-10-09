@@ -95,7 +95,7 @@ Names count individual operations, not 18 different website products. For exampl
 | `toolrobin_qr_code`                | `text` → QR SVG text, dimensions and error-correction level                  | [QR generator](https://toolrobin.com/tools/qr-code/)                    |
 | `toolrobin_meta_preview`           | `title`, `description`, `pageUrl` → escaped HTML tags and domain             | [Meta preview](https://toolrobin.com/tools/meta-preview/)               |
 
-All arguments have schemas and reject unknown keys. Defaults are advertised in `tools/list`. Successful responses contain the same result as JSON text and `structuredContent`; invalid tool arguments return `isError: true` with a readable message.
+All arguments have schemas and reject unknown keys. Unknown-parameter errors list the allowed names without echoing the supplied names. Defaults are advertised in `tools/list`. Successful responses contain the same result as JSON text and `structuredContent`; invalid tool arguments return `isError: true` with a readable message.
 
 ## Example calls
 
@@ -150,7 +150,7 @@ A human-facing request can be: “Use ToolRobin to remove duplicate lines from t
 - Text and JSON: at most **100,000 UTF-16 code units per field**. Emojis can use more than one unit. Blank input is rejected where it has no useful result; Base64 permits empty text.
 - Comparison: at most **1,500 lines per draft**, literal line comparison rather than semantic similarity. Word counting reports Latin/number tokens and separate Han characters; it is not a universal language segmentation algorithm.
 - JSON: at most **100 nesting levels**. Numeric spelling, duplicate keys and key order are preserved; this is formatting, not schema validation or repair. Results over **1 MiB of serialized data** are rejected rather than truncated.
-- Stdio: **1 MiB incoming-buffer cap**. Protocol framing failures close the transport. Ordinary invalid tool inputs return errors and leave the session usable. UTF-8 byte limits and UTF-16 field limits are different.
+- Stdio: **1 MiB incoming-buffer cap**. Tool arguments are flat objects; malformed container inputs are also limited to **64 object members/array elements combined**, before tool validation. This does not count characters inside text or JSON strings. Protocol framing failures close the transport. Ordinary invalid tool inputs return errors and leave the session usable. UTF-8 byte limits and UTF-16 field limits are different.
 - Base64: textual UTF-8 only; standard and URL-safe decoding accepted, malformed padding/UTF-8 rejected. Leading BOM characters are preserved during text round trips. URL codec encodes a component, not a whole URL; decoding does not treat `+` as a space.
 - Calendar dates: real `YYYY-MM-DD` dates, years **0001–9999**. Day offsets are integers from **−3,652,058 to 3,652,058**; the resulting date must stay in range. Date-time conversion requires seconds and an explicit `Z` or numeric timezone; Unix input requires an explicit seconds/milliseconds unit and whole-number value.
 - Percentages: decimal strings with at most **15 integer digits and 6 fractional digits**, no units or exponents. BigInt arithmetic avoids floating-point input rounding. Results round to at most six decimal places and flag approximation. Zero or invalid denominators are rejected.

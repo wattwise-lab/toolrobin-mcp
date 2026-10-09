@@ -5,6 +5,9 @@ export function createServer() {
   const server = new McpServer(
     { name: "toolrobin-mcp", version: SERVER_VERSION },
     {
+      // Every tool takes a flat argument object. Bound malformed container inputs
+      // before schema validation; text/JSON strings keep their separate limits.
+      maxToolInputElements: 64,
       instructions:
         "ToolRobin Phase 1 provides 18 local-only operations. Inputs and results remain within stdio; this process makes no network requests and does not save them. Website links are optional equivalents, never visited by this server. AI hosts have their own storage and transmission policies.",
     },

@@ -1,11 +1,11 @@
 {
-  "verifiedAt": "2026-10-09T05:50:04.309Z",
+  "verifiedAt": "2026-10-09T06:17:14.560Z",
   "node": "v24.18.0",
   "build": "passed",
   "typeCheck": "passed (source, tests, scripts)",
   "unitAndIntegrationTests": {
-    "total": 67,
-    "passed": 67,
+    "total": 74,
+    "passed": 74,
     "failed": 0
   },
   "stdio": {
@@ -16,7 +16,7 @@
   "package": {
     "cleanInstall": "passed",
     "offlineNpx": "passed",
-    "sha256": "c4dede5438fb0d23413a543be4dcec0396d18038f510c9e488b2d9112f31ec57"
+    "sha256": "9a36c1e7ea1dee1fabad8fa1705429ca865f31b99a6041515ce9977551a8c7b9"
   },
   "configurationLaunchCommands": [
     {
@@ -54,7 +54,7 @@
   "claudeDesktop": {
     "status": "installed and configured; required signed-in assistant calls pending",
     "version": "2.31226.0",
-    "reason": "Official desktop client still at login. No actual assistant invocation is claimed."
+    "reason": "Required signed-in assistant calls remain unverified. Latest native interface read timed out; no new login state or invocation is claimed."
   },
   "cursor": {
     "status": "passed",
@@ -96,20 +96,23 @@
       "passed": 67,
       "failed": 0
     },
-    "note": "The tested revision contains the final source and host-check implementations. The subsequent commit records this clean-clone result only."
+    "note": "The previous clean-clone result is historical; the follow-up source has local and host checks. A fresh public clone will be recorded after publication."
   },
   "minimumRuntime": {
     "node": "v22.12.0",
+    "tests": 74,
+    "passed": 74,
+    "failed": 0,
     "tools": 18,
     "calls": 57,
     "networkApisDenied": true,
     "status": "passed",
-    "evidence": "node22.json"
+    "evidence": "node22-tests.txt"
   },
   "dependencyAudit": {
     "productionVulnerabilities": 0,
     "allVulnerabilities": 0,
-    "reviewedAt": "2026-10-09T05:50:04.309Z",
+    "reviewedAt": "2026-10-09T06:17:14.560Z",
     "source": "npm audit JSON reports, including development dependencies"
   },
   "codex": {
@@ -127,5 +130,10 @@
     "configuration": "local shared Codex stdio entry added, preserving other settings",
     "nativeGUI": "not verified; requires restart and its own assistant check",
     "actualCodexCLI": "passed separately"
+  },
+  "followupReview": {
+    "evidence": "hardening.json",
+    "issuesFixed": 3,
+    "tests": 74
   }
 }

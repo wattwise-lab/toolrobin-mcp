@@ -1,0 +1,380 @@
+TAP version 13
+# Subtest: 250 Unicode codec cases match Node UTF-8 encoding and round-trip without losing characters
+ok 1 - 250 Unicode codec cases match Node UTF-8 encoding and round-trip without losing characters
+  ---
+  duration_ms: 12.681125
+  ...
+# Subtest: 200 structured JSON cases preserve semantics, escaped text and stable formatting
+ok 2 - 200 structured JSON cases preserve semantics, escaped text and stable formatting
+  ---
+  duration_ms: 9.181875
+  ...
+# Subtest: timestamp extremes keep exact millisecond and second spelling; 200 calendar cases reverse correctly
+ok 3 - timestamp extremes keep exact millisecond and second spelling; 200 calendar cases reverse correctly
+  ---
+  duration_ms: 10.251709
+  ...
+# Subtest: 200 line comparisons reconstruct both drafts and find a minimal edit sequence
+ok 4 - 200 line comparisons reconstruct both drafts and find a minimal edit sequence
+  ---
+  duration_ms: 6.257917
+  ...
+# Subtest: real stdio discovery and all 18 tools work with network and listening sockets denied
+ok 5 - real stdio discovery and all 18 tools work with network and listening sockets denied
+  ---
+  duration_ms: 181.780667
+  ...
+# Subtest: untrusted parameter names produce bounded corrections and malformed containers leave every tool usable
+ok 6 - untrusted parameter names produce bounded corrections and malformed containers leave every tool usable
+  ---
+  duration_ms: 213.309833
+  ...
+# Subtest: a burst of malformed protocol frames closes with one diagnostic and no payload echo
+ok 7 - a burst of malformed protocol frames closes with one diagnostic and no payload echo
+  ---
+  duration_ms: 128.433792
+  ...
+# Subtest: SIGTERM releases a connected stdio process while the host keeps its input pipe open
+ok 8 - SIGTERM releases a connected stdio process while the host keeps its input pipe open
+  ---
+  duration_ms: 114.947917
+  ...
+# Subtest: an oversized incomplete frame closes safely without logging its contents
+ok 9 - an oversized incomplete frame closes safely without logging its contents
+  ---
+  duration_ms: 122.518458
+  ...
+# Subtest: word_counter: normal input
+ok 10 - word_counter: normal input
+  ---
+  duration_ms: 11.108584
+  ...
+# Subtest: word_counter: rejects invalid input
+ok 11 - word_counter: rejects invalid input
+  ---
+  duration_ms: 0.694584
+  ...
+# Subtest: word_counter: rejects unknown argument keys
+ok 12 - word_counter: rejects unknown argument keys
+  ---
+  duration_ms: 0.191291
+  ...
+# Subtest: text_cleanup: normal input
+ok 13 - text_cleanup: normal input
+  ---
+  duration_ms: 0.507
+  ...
+# Subtest: text_cleanup: rejects invalid input
+ok 14 - text_cleanup: rejects invalid input
+  ---
+  duration_ms: 0.191583
+  ...
+# Subtest: text_cleanup: rejects unknown argument keys
+ok 15 - text_cleanup: rejects unknown argument keys
+  ---
+  duration_ms: 0.0555
+  ...
+# Subtest: text_compare: normal input
+ok 16 - text_compare: normal input
+  ---
+  duration_ms: 0.510375
+  ...
+# Subtest: text_compare: rejects invalid input
+ok 17 - text_compare: rejects invalid input
+  ---
+  duration_ms: 0.064375
+  ...
+# Subtest: text_compare: rejects unknown argument keys
+ok 18 - text_compare: rejects unknown argument keys
+  ---
+  duration_ms: 0.616458
+  ...
+# Subtest: remove_duplicate_lines: normal input
+ok 19 - remove_duplicate_lines: normal input
+  ---
+  duration_ms: 1.126041
+  ...
+# Subtest: remove_duplicate_lines: rejects invalid input
+ok 20 - remove_duplicate_lines: rejects invalid input
+  ---
+  duration_ms: 0.111333
+  ...
+# Subtest: remove_duplicate_lines: rejects unknown argument keys
+ok 21 - remove_duplicate_lines: rejects unknown argument keys
+  ---
+  duration_ms: 0.063084
+  ...
+# Subtest: base64_encode: normal input
+ok 22 - base64_encode: normal input
+  ---
+  duration_ms: 0.297917
+  ...
+# Subtest: base64_encode: rejects invalid input
+ok 23 - base64_encode: rejects invalid input
+  ---
+  duration_ms: 0.038458
+  ...
+# Subtest: base64_encode: rejects unknown argument keys
+ok 24 - base64_encode: rejects unknown argument keys
+  ---
+  duration_ms: 0.042958
+  ...
+# Subtest: base64_decode: normal input
+ok 25 - base64_decode: normal input
+  ---
+  duration_ms: 0.247666
+  ...
+# Subtest: base64_decode: rejects invalid input
+ok 26 - base64_decode: rejects invalid input
+  ---
+  duration_ms: 0.047583
+  ...
+# Subtest: base64_decode: rejects unknown argument keys
+ok 27 - base64_decode: rejects unknown argument keys
+  ---
+  duration_ms: 0.041291
+  ...
+# Subtest: url_encode: normal input
+ok 28 - url_encode: normal input
+  ---
+  duration_ms: 0.078542
+  ...
+# Subtest: url_encode: rejects invalid input
+ok 29 - url_encode: rejects invalid input
+  ---
+  duration_ms: 0.031083
+  ...
+# Subtest: url_encode: rejects unknown argument keys
+ok 30 - url_encode: rejects unknown argument keys
+  ---
+  duration_ms: 0.092583
+  ...
+# Subtest: url_decode: normal input
+ok 31 - url_decode: normal input
+  ---
+  duration_ms: 0.061541
+  ...
+# Subtest: url_decode: rejects invalid input
+ok 32 - url_decode: rejects invalid input
+  ---
+  duration_ms: 0.028167
+  ...
+# Subtest: url_decode: rejects unknown argument keys
+ok 33 - url_decode: rejects unknown argument keys
+  ---
+  duration_ms: 0.032333
+  ...
+# Subtest: json_format: normal input
+ok 34 - json_format: normal input
+  ---
+  duration_ms: 0.299375
+  ...
+# Subtest: json_format: rejects invalid input
+ok 35 - json_format: rejects invalid input
+  ---
+  duration_ms: 0.039292
+  ...
+# Subtest: json_format: rejects unknown argument keys
+ok 36 - json_format: rejects unknown argument keys
+  ---
+  duration_ms: 0.038291
+  ...
+# Subtest: json_minify: normal input
+ok 37 - json_minify: normal input
+  ---
+  duration_ms: 0.171916
+  ...
+# Subtest: json_minify: rejects invalid input
+ok 38 - json_minify: rejects invalid input
+  ---
+  duration_ms: 0.073916
+  ...
+# Subtest: json_minify: rejects unknown argument keys
+ok 39 - json_minify: rejects unknown argument keys
+  ---
+  duration_ms: 0.0535
+  ...
+# Subtest: timestamp_to_date: normal input
+ok 40 - timestamp_to_date: normal input
+  ---
+  duration_ms: 3.540583
+  ...
+# Subtest: timestamp_to_date: rejects invalid input
+ok 41 - timestamp_to_date: rejects invalid input
+  ---
+  duration_ms: 0.12425
+  ...
+# Subtest: timestamp_to_date: rejects unknown argument keys
+ok 42 - timestamp_to_date: rejects unknown argument keys
+  ---
+  duration_ms: 0.061083
+  ...
+# Subtest: date_to_timestamp: normal input
+ok 43 - date_to_timestamp: normal input
+  ---
+  duration_ms: 0.294667
+  ...
+# Subtest: date_to_timestamp: rejects invalid input
+ok 44 - date_to_timestamp: rejects invalid input
+  ---
+  duration_ms: 0.076084
+  ...
+# Subtest: date_to_timestamp: rejects unknown argument keys
+ok 45 - date_to_timestamp: rejects unknown argument keys
+  ---
+  duration_ms: 0.038292
+  ...
+# Subtest: date_difference: normal input
+ok 46 - date_difference: normal input
+  ---
+  duration_ms: 4.184875
+  ...
+# Subtest: date_difference: rejects invalid input
+ok 47 - date_difference: rejects invalid input
+  ---
+  duration_ms: 0.0535
+  ...
+# Subtest: date_difference: rejects unknown argument keys
+ok 48 - date_difference: rejects unknown argument keys
+  ---
+  duration_ms: 0.051084
+  ...
+# Subtest: date_add_days: normal input
+ok 49 - date_add_days: normal input
+  ---
+  duration_ms: 0.261
+  ...
+# Subtest: date_add_days: rejects invalid input
+ok 50 - date_add_days: rejects invalid input
+  ---
+  duration_ms: 0.05
+  ...
+# Subtest: date_add_days: rejects unknown argument keys
+ok 51 - date_add_days: rejects unknown argument keys
+  ---
+  duration_ms: 0.052
+  ...
+# Subtest: percentage: normal input
+ok 52 - percentage: normal input
+  ---
+  duration_ms: 0.284334
+  ...
+# Subtest: percentage: rejects invalid input
+ok 53 - percentage: rejects invalid input
+  ---
+  duration_ms: 0.036917
+  ...
+# Subtest: percentage: rejects unknown argument keys
+ok 54 - percentage: rejects unknown argument keys
+  ---
+  duration_ms: 0.041792
+  ...
+# Subtest: password_generator: normal input
+ok 55 - password_generator: normal input
+  ---
+  duration_ms: 1.1475
+  ...
+# Subtest: password_generator: rejects invalid input
+ok 56 - password_generator: rejects invalid input
+  ---
+  duration_ms: 0.093792
+  ...
+# Subtest: password_generator: rejects unknown argument keys
+ok 57 - password_generator: rejects unknown argument keys
+  ---
+  duration_ms: 0.049209
+  ...
+# Subtest: qr_code: normal input
+ok 58 - qr_code: normal input
+  ---
+  duration_ms: 3.883834
+  ...
+# Subtest: qr_code: rejects invalid input
+ok 59 - qr_code: rejects invalid input
+  ---
+  duration_ms: 0.077584
+  ...
+# Subtest: qr_code: rejects unknown argument keys
+ok 60 - qr_code: rejects unknown argument keys
+  ---
+  duration_ms: 0.058125
+  ...
+# Subtest: meta_preview: normal input
+ok 61 - meta_preview: normal input
+  ---
+  duration_ms: 0.3485
+  ...
+# Subtest: meta_preview: rejects invalid input
+ok 62 - meta_preview: rejects invalid input
+  ---
+  duration_ms: 0.040334
+  ...
+# Subtest: meta_preview: rejects unknown argument keys
+ok 63 - meta_preview: rejects unknown argument keys
+  ---
+  duration_ms: 0.042084
+  ...
+# Subtest: complete, unique names and bounded JSON schemas
+ok 64 - complete, unique names and bounded JSON schemas
+  ---
+  duration_ms: 0.094291
+  ...
+# Subtest: limits reject long text and excessive line counts
+ok 65 - limits reject long text and excessive line counts
+  ---
+  duration_ms: 0.325292
+  ...
+# Subtest: JSON guard applies to both modes, ignores brackets inside strings, and preserves adversarial keys as data
+ok 66 - JSON guard applies to both modes, ignores brackets inside strings, and preserves adversarial keys as data
+  ---
+  duration_ms: 0.11875
+  ...
+# Subtest: Base64 strict UTF-8, URL-safe input, Unicode and padding
+ok 67 - Base64 strict UTF-8, URL-safe input, Unicode and padding
+  ---
+  duration_ms: 0.201041
+  ...
+# Subtest: Base64 round trips leading BOM characters, including URL-safe and spaced input
+ok 68 - Base64 round trips leading BOM characters, including URL-safe and spaced input
+  ---
+  duration_ms: 0.194208
+  ...
+# Subtest: calendar boundaries, reverse inclusive days and exact large percentage values
+ok 69 - calendar boundaries, reverse inclusive days and exact large percentage values
+  ---
+  duration_ms: 0.261666
+  ...
+# Subtest: password rejects stuck random source and estimates the restricted alphabet without Math.random
+ok 70 - password rejects stuck random source and estimates the restricted alphabet without Math.random
+  ---
+  duration_ms: 0.396583
+  ...
+# Subtest: QR output is independently decoded from returned SVG coordinates
+ok 71 - QR output is independently decoded from returned SVG coordinates
+  ---
+  duration_ms: 21.882959
+  ...
+# Subtest: metadata validates URLs without fetching; escapes content, forbids credentials and executable schemes
+ok 72 - metadata validates URLs without fetching; escapes content, forbids credentials and executable schemes
+  ---
+  duration_ms: 0.196083
+  ...
+# Subtest: copied core is self-contained and matches recorded provenance hashes
+ok 73 - copied core is self-contained and matches recorded provenance hashes
+  ---
+  duration_ms: 1.501917
+  ...
+# Subtest: operation errors are English and do not echo invalid JSON content
+ok 74 - operation errors are English and do not echo invalid JSON content
+  ---
+  duration_ms: 0.129125
+  ...
+1..74
+# tests 74
+# suites 0
+# pass 74
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1060.102042

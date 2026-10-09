@@ -1,0 +1,126 @@
+{
+  "reviewedAt": "2026-10-09T06:17:14.560Z",
+  "scope": "Follow-up implementation self-review of the independent MCP project; not an independent penetration test or a claim of no vulnerabilities.",
+  "findings": [
+    {
+      "issue": "Unknown parameter names were echoed into validation errors.",
+      "before": {
+        "longKeyResponseBytes": 50202,
+        "inputMarkerEchoed": true
+      },
+      "after": {
+        "longKeyResponseBytes": 191,
+        "inputMarkerEchoed": false,
+        "allowedNamesShown": true
+      },
+      "fix": "Bound unknown-key messages to the declared argument names; cap malformed argument containers at 64 total members/elements."
+    },
+    {
+      "issue": "Malformed complete protocol frames each emitted a diagnostic and continued reading.",
+      "before": {
+        "malformedFrames": 32,
+        "diagnostics": 32,
+        "stderrBytes": 2496
+      },
+      "after": {
+        "malformedFrames": 1000,
+        "diagnostics": 1,
+        "stderrBytesLimit": 256,
+        "processClosed": true
+      },
+      "fix": "Close damaged protocol streams after one bounded diagnostic. Ordinary invalid tool arguments still return isError and retain the session."
+    },
+    {
+      "issue": "Closing the transport alone could leave the process waiting on an open parent input pipe.",
+      "before": "The new shutdown regression did not exit within 10 seconds.",
+      "after": "Connected SIGTERM shutdown exits with code 0 while the parent input pipe remains open.",
+      "fix": "Release stdin after server close; test both damaged streams and connected shutdown."
+    }
+  ],
+  "checks": {
+    "unitAndIntegrationTests": {
+      "total": 74,
+      "passed": 74,
+      "failed": 0
+    },
+    "minimumNode": {
+      "version": "v22.12.0",
+      "total": 74,
+      "passed": 74,
+      "failed": 0,
+      "evidence": "node22-tests.txt"
+    },
+    "dependencyAudit": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "hostileArguments": {
+      "tools": 18,
+      "rejectedCases": 54,
+      "recoveryCalls": 54,
+      "networkApisDenied": true,
+      "returnedErrorsUnderBytes": 1024,
+      "probes": {
+        "verifiedAt": "2026-10-09T06:15:51.450Z",
+        "probes": [
+          {
+            "probe": "long_unknown_key",
+            "isError": true,
+            "resultBytes": 191,
+            "echoedMarker": false,
+            "sessionRecovery": true
+          },
+          {
+            "probe": "many_unknown_keys",
+            "isError": true,
+            "resultBytes": 177,
+            "echoedMarker": false,
+            "sessionRecovery": true
+          },
+          {
+            "probe": "nested_wrong_type",
+            "isError": true,
+            "resultBytes": 177,
+            "echoedMarker": false,
+            "sessionRecovery": true
+          }
+        ],
+        "serverStderr": "empty"
+      }
+    },
+    "syntheticProperties": {
+      "unicodeCodecCases": 250,
+      "structuredJsonCases": 200,
+      "timestampCasesIncludingExtremes": 209,
+      "calendarCases": 200,
+      "lineComparisonCases": 200,
+      "scope": "Deterministic correctness and reconstruction checks, not security proof."
+    },
+    "actualAIHosts": {
+      "codex": {
+        "observedCalls": 24,
+        "evidence": "codex.json"
+      },
+      "cursor": {
+        "observedCalls": 24,
+        "evidence": "cursor.json"
+      }
+    },
+    "packaging": {
+      "evidence": "package.json",
+      "cleanInstall": true,
+      "offlineNpx": true
+    },
+    "provenance": "14 copied core files remain hash-matched; no copied algorithm was edited."
+  },
+  "remaining": [
+    "Required Claude Desktop signed-in assistant acceptance is still unverified. Latest native interface read timed out.",
+    "Claude Code actual assistant acceptance remains unavailable with the current account subscription.",
+    "Native desktop GUI acceptance is not inferred from CLI calls; browser ChatGPT requires the separate remote phase.",
+    "npm registry package remains unpublished."
+  ]
+}

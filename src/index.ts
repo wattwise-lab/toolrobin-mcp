@@ -23,7 +23,13 @@ if (arguments_.includes("--help")) {
   const close = async () => {
     if (closing) return;
     closing = true;
-    await server.close();
+    try {
+      await server.close();
+    } finally {
+      // The transport pauses stdin; release the pipe so a parent that keeps its
+      // write end open cannot leave this standalone process waiting forever.
+      process.stdin.destroy();
+    }
   };
   process.once("SIGINT", () => {
     void close();
@@ -36,9 +42,13 @@ if (arguments_.includes("--help")) {
   });
   // Deliberately do not log arguments, tool results, passwords, parse errors or stacks.
   server.server.onerror = () => {
+    if (closing) return;
     process.stderr.write(
-      "MCP message rejected; verify request format and the 1 MiB input-buffer limit.\n",
+      "MCP message rejected; connection closed. Check request format and the 1 MiB input-buffer limit, then restart the client connection.\n",
     );
+    // Stop a damaged stream after one bounded diagnostic. Tool argument errors
+    // are returned by the handler as isError results and never reach this path.
+    void close();
   };
   try {
     await server.connect(transport);

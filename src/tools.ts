@@ -65,7 +65,15 @@ function define<S extends z.ZodRawShape>(
   fields: S,
   execute: (args: z.output<z.ZodObject<S>>) => Data,
 ): ToolDefinition {
-  const schema = z.strictObject(fields);
+  // Never echo untrusted parameter names. Give the host the correct names instead.
+  const schema = z.strictObject(fields, {
+    error: (issue) =>
+      issue.code === "unrecognized_keys"
+        ? "Unknown parameter. Allowed parameters: " +
+          Object.keys(fields).join(", ") +
+          "."
+        : undefined,
+  });
   return {
     name: "toolrobin_" + name,
     description,

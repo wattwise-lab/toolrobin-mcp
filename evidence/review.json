@@ -1,11 +1,13 @@
 {
-  "reviewedAt": "2026-10-09T05:50:04.309Z",
+  "reviewedAt": "2026-10-09T06:17:14.560Z",
   "reviewer": "Implementation self-review; no independent third-party audit claimed",
   "sourceChanges": [
     "Preserve leading UTF-8 BOM in text Base64 decoding without changing copied website core.",
     "Clarify comparison-only trim/case options, line joining, explicit timestamp units and inclusive date direction.",
     "Declare Cursor stdio transport and document execution permissions separately from server discovery.",
-    "Update tsx to 4.23.15 and resolved esbuild to 0.28.2 to remove the reported development dependency advisory."
+    "Update tsx to 4.23.15 and resolved esbuild to 0.28.2 to remove the reported development dependency advisory.",
+    "Replace unknown-parameter echoes with bounded allowed-name corrections and cap malformed argument containers.",
+    "Close damaged protocol streams after one diagnostic and release stdin on shutdown."
   ],
   "checks": {
     "inputValidation": "Strict schemas, type/size bounds, unknown arguments, Unicode errors and oversized frames covered.",
@@ -15,7 +17,8 @@
     "provenance": "14 copied core files remain hash-matched to PROVENANCE.json; source algorithms not rewritten.",
     "packaging": "MIT, third-party notices, portable templates, clean install and offline local-tarball npx verified.",
     "actualAIHosts": "Codex CLI and Cursor CLI independently checked 18 tools, expected errors, recovery and natural-language parameter selection.",
-    "existingClientSettings": "Other Codex entries preserved; Cursor per-tool test permissions apply only in disposable workspaces; existing agent executable preserved."
+    "existingClientSettings": "Other Codex entries preserved; Cursor per-tool test permissions apply only in disposable workspaces; existing agent executable preserved.",
+    "followupHardening": "See hardening.json: 74 tests, including synthetic round trips, adversarial arguments, damaged-stream closure and connected shutdown."
   },
   "limitations": [
     "Claude Desktop signed-in assistant requirement remains outstanding.",
