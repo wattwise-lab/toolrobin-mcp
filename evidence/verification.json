@@ -218,9 +218,16 @@
     "projectConfiguration": "prepared locally; not committed with machine-specific paths"
   },
   "claudeDesktop": {
-    "status": "installed and configured; required signed-in assistant calls pending",
+    "status": "passed",
+    "verifiedAt": "2026-10-10T01:07:56.044727+00:00",
     "version": "2.31226.0",
-    "reason": "Required signed-in assistant calls remain unverified. Latest native interface read timed out; no new login state or invocation is claimed."
+    "signedIn": true,
+    "actualNativeGUI": true,
+    "normalTools": 18,
+    "invalidInput": "JSON parse failure observed",
+    "recovery": "passed after one-time approval retry",
+    "evidence": "claude-desktop.json",
+    "versionNote": "Version recorded during the existing installation; not a claim of latest client release."
   },
   "cursor": {
     "status": "passed",
@@ -244,10 +251,9 @@
     "published": false
   },
   "definitionOfDone": {
-    "status": "not fully accepted: Claude Desktop assistant invocation still required",
-    "remaining": [
-      "Sign in to official Claude Desktop and verify real assistant discovery and calls."
-    ]
+    "status": "accepted for the local Phase 1 implementation, package launch and required native Claude Desktop invocation",
+    "remaining": [],
+    "publication": "npm registry publication remains a separate owner decision; unrestricted npx registry installation is not claimed."
   },
   "publicRepository": {
     "url": "https://github.com/wattwise-lab/toolrobin-mcp",

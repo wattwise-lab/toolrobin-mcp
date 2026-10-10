@@ -1,0 +1,119 @@
+{
+  "verifiedAt": "2026-10-10T01:07:56.044727+00:00",
+  "client": "official Claude Desktop on macOS",
+  "transport": "pre-existing configured local stdio server",
+  "method": "Signed-in native assistant calls; each actual Request/Response card expanded through native UI and checked, rather than accepting the assistant summary. Synthetic inputs only. Each execution approved once.",
+  "tools": 18,
+  "normalResults": [
+    {
+      "tool": "toolrobin_word_counter",
+      "status": "passed",
+      "assertion": "27 characters, 5 words and 1 paragraph for the synthetic sentence"
+    },
+    {
+      "tool": "toolrobin_text_cleanup",
+      "status": "passed",
+      "assertion": "Repeated spaces trimmed and collapsed to one two"
+    },
+    {
+      "tool": "toolrobin_text_compare",
+      "status": "passed",
+      "assertion": "a/b to a/c yields one unchanged, one removed and one added line"
+    },
+    {
+      "tool": "toolrobin_remove_duplicate_lines",
+      "status": "passed",
+      "assertion": "Three input lines a/a/b yield two lines a/b"
+    },
+    {
+      "tool": "toolrobin_base64_encode",
+      "status": "passed",
+      "assertion": "Hello encodes to SGVsbG8= with UTF-8"
+    },
+    {
+      "tool": "toolrobin_base64_decode",
+      "status": "passed",
+      "assertion": "SGVsbG8= decodes to Hello with UTF-8"
+    },
+    {
+      "tool": "toolrobin_url_encode",
+      "status": "passed",
+      "assertion": "a b? encodes to a%20b%3F"
+    },
+    {
+      "tool": "toolrobin_url_decode",
+      "status": "passed",
+      "assertion": "a%20b%3F decodes to a b?"
+    },
+    {
+      "tool": "toolrobin_json_format",
+      "status": "passed",
+      "assertion": "Two keys remain in original order, formatting succeeds and numbersPreserved is true"
+    },
+    {
+      "tool": "toolrobin_json_minify",
+      "status": "passed",
+      "assertion": "Object retains x=1 and s=a b, mode=minify and numbersPreserved=true"
+    },
+    {
+      "tool": "toolrobin_timestamp_to_date",
+      "status": "passed",
+      "assertion": "Zero seconds yields 1970-01-01T00:00:00.000Z and zero seconds/milliseconds"
+    },
+    {
+      "tool": "toolrobin_date_to_timestamp",
+      "status": "passed",
+      "assertion": "1970-01-01T00:00:00Z yields zero seconds/milliseconds"
+    },
+    {
+      "tool": "toolrobin_date_difference",
+      "status": "passed",
+      "assertion": "2026-10-10 to 2026-10-17 yields 7 days without inclusive counting"
+    },
+    {
+      "tool": "toolrobin_date_add_days",
+      "status": "passed",
+      "assertion": "2026-10-10 plus 7 days yields 2026-10-17"
+    },
+    {
+      "tool": "toolrobin_percentage",
+      "status": "passed",
+      "assertion": "15 percent of 240 yields numeric result 36 and formula"
+    },
+    {
+      "tool": "toolrobin_password_generator",
+      "status": "passed",
+      "assertion": "One 12-character synthetic test string and about 78.14 entropy bits; host-storage caveat present"
+    },
+    {
+      "tool": "toolrobin_qr_code",
+      "status": "passed",
+      "assertion": "Nonempty SVG response, width/height 232, modules 21, correction M and quiet zone 4"
+    },
+    {
+      "tool": "toolrobin_meta_preview",
+      "status": "passed",
+      "assertion": "Synthetic title/description/example.com URL returned with escaped HTML metadata and canonical/OG/Twitter tags"
+    }
+  ],
+  "invalidInput": {
+    "tool": "toolrobin_json_format",
+    "input": "{bad}",
+    "status": "actionable error observed in the real tool response"
+  },
+  "recovery": {
+    "tool": "toolrobin_json_format",
+    "input": "{\"ok\":true}",
+    "status": "passed after safe single-call retry with one-time approval"
+  },
+  "excludedAttempts": [
+    "An unattended approval timed out. It was not counted as successful recovery.",
+    "Two earlier multi-call attempts disconnected at intermediate permissions. Only subsequently observed actual tool responses are accepted."
+  ],
+  "limits": [
+    "Client UI virtualizes/truncates long AX text; the full QR path was visible on screen, while independent QR decoding remains the separate existing package/protocol test.",
+    "This is the native Claude Desktop host acceptance, not Claude Code, ChatGPT Desktop or every AI host.",
+    "No generated passwords, raw account UI screenshots, local machine paths or chat identifiers are included in this public receipt.",
+    "No external query tools, paid provider inference, npm registry publication or website changes occur in this MCP documentation closure."
+  ]
+}

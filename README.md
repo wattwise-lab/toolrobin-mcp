@@ -207,7 +207,7 @@ The runner creates a disposable workspace with only `Mcp(toolrobin:*)` allowed, 
 
 See `evidence/verification.json` for dated results and the distinction between protocol, package, launch-command and actual application verification. No GitHub Actions run is needed. There is no automatic npm publication.
 
-Current host acceptance (2026-10-09): Codex CLI and Cursor CLI each made 24 observed calls, covering all 18 tools, three invalid inputs, recovery and two natural-language requests. Claude Desktop is installed and configured, but its required signed-in assistant check is still pending. Claude Code connected in a health check; the available account's login page requires Pro/Max for actual assistant use. Native desktop GUI calls are not inferred from CLI checks. This phase is not marked fully accepted until the Claude Desktop requirement is met.
+Current host acceptance: on October 10, signed-in official Claude Desktop invoked all 18 tools with synthetic inputs. Each real Request/Response card was expanded and checked; invalid JSON produced an actionable error, and a subsequent valid call recovered. See [the scoped Desktop receipt](evidence/claude-desktop.json). An unattended approval timeout and earlier interrupted batches are excluded from successful acceptance. On October 9, Codex CLI and Cursor CLI each made 24 observed calls, covering all 18 tools, three invalid inputs, recovery and two natural-language requests. Claude Code connected in a health check, but actual assistant use was blocked by the available account's required subscription; ChatGPT Desktop native GUI calls remain unverified. These client checks are separate. Local Phase 1 is accepted; the npm registry package remains unpublished.
 
 ## Source and license
 
